@@ -16,11 +16,11 @@ tên đầy đủ Hyper text tranfor protocal là một giao thức truyền t�
   - trong đó --save-dev là chỉ tải thư viện này về trên môi trường dev, khi uploand lên server thì nó sẽ không cài thư viện này về để cho đỡ tốn tài nguyên
 
 - muốn chạy server bằng nodemon thì trước tiên phải tinh chỉnh 1 xíu trong file package.json
-  `"script":{
+  ````"script":{
   "start": "nodemon tenFileMacDinhChayDuAn"
   }
-
-  --> npm start`
+  --> npm start```
+  ````
 
 # git
 
