@@ -33,6 +33,8 @@ tenFile
 node_modules/
 ```
 
+- Các bước để connect và push code lên git
+
 ```
     git clone SSH_của dự án // clone dự án từ trên github về, lưu ý là đuôi link của github phải trùng với folder nơi bạn chứa code clone về
     git add . // đẩy tất cả những thay đổi lên local, nơi chuẩn bị code để đẩy lên git
