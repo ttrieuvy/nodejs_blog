@@ -11,12 +11,14 @@ tên đầy đủ Hyper text tranfor protocal là một giao thức truyền t�
 
 - lắng nghe sự thay đổi trên file của bạn, sau đó nó sẽ tự động chạy lại server để người viết không cần phải chạy lại server 1 cách thủ công
 
-```install về: npm i nodemon --save-dev
+```
+install về: npm i nodemon --save-dev
 - trong đó --save-dev là chỉ tải thư viện này về trên môi trường dev, khi uploand lên môi trường thật thì nó sẽ không cài thư viện này về để (bởi nó không còn quan trọng)
 ```
 
 - muốn chạy server bằng nodemon thì trước tiên phải tinh chỉnh 1 xíu trong file package.json
-  ````"script":{
+  ````
+  "script":{
   "start": "nodemon tenFileMacDinhChayDuAn"
   }
   --> npm start```
@@ -26,12 +28,13 @@ tên đầy đủ Hyper text tranfor protocal là một giao thức truyền t�
 
 - .gitignore: là nơi cấu hình những file sẽ không được đẩy lên git
 
-```fsfs
+```
 tenFile
 node_modules/
 ```
 
-```git clone SSH_của dự án // clone dự án từ trên github về, lưu ý là đuôi link của github phải trùng với folder nơi bạn chứa code clone về
+```
+    git clone SSH_của dự án // clone dự án từ trên github về, lưu ý là đuôi link của github phải trùng với folder nơi bạn chứa code clone về
     git add . // đẩy tất cả những thay đổi lên local, nơi chuẩn bị code để đẩy lên git
     git commit -m "nội dung" // tạo ghi chú cho phần code mình đẩy lên
     git push origin master // đẩy code thì local lên git
