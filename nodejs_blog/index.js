@@ -1,9 +1,13 @@
 const express = require("express");
+const morgan = require("morgan");
 const app = express();
 const port = 3000;
 
-app.get("/xin-chao", (req, res) => {
-  res.send("Hello World! Xin chào Vỹ Tèo");
+app.use(morgan("combined"));
+app.get("/trang-chu", (req, res) => {
+  res.send(`
+  <h1> Xin chào Vỹ Tèo, đây là trang chủ!</h1>
+  `);
 });
 
 // 127.0.0.1 - local host
