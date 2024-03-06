@@ -51,3 +51,62 @@ npm i morgan --save-dev
 ```
 
 # temple engines(handlebars)
+
+- là một công cụ cho phép bạn tạo ra các mẫu HTML động bằng cách kết hợp dữ liệu từ nguồn khác nhau vào trong các template. Điều này giúp tạo ra các trang web động và linh hoạt hơn.
+
+## cấu hình handlebars
+
+```
+const path = require("path"); //chèn thư viện path vô
+const hbs = require("express-handlebars"); // cài thư viện
+app.engine("handlebars", hbs.engine());
+app.set("view engine", "handlebars");
+app.set("views", path.join(__dirname, "resources/views"));
+
+app.get("/", (req, res) => {
+  res.render("home");
+});
+```
+
+- khi route home, mặc định nó vẫn sẽ lấy layout của layouts.main vào, đồng thời nó cũng sẽ lấy content từ views.home để include vào file layouts.main
+
+## Cấu hình lại đuôi file handlebars
+
+```
+// templete engine
+
+app.engine("hbs", hbs.engine({
+    extname: ".hbs",
+  })
+);
+
+app.set("view engine", "hbs");
+app.set("views", path.join(__dirname, "resources/views"));
+```
+
+## partials layout
+
+### Cú pháp nạp partials
+
+- tại file views.partials
+
+```
+{{> tenFile.hbs}}
+{{> tenFolder/tenFile.hbs}}
+```
+
+## sơ đồ thư mục
+
+```
+src
+├── resources
+    ├── scss
+    └── views
+      ├── layouts
+        └── main.handlebars
+      ├── partials
+        ├── header.hbs
+        └── footer.hbs
+      └── home.handlebars
+└── index.js
+```
