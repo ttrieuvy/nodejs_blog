@@ -1,6 +1,6 @@
 # HTTPs
 
-tên đầy đủ Hyper text tranfor protocal là một giao thức truyền tải siêu văn bản, nó là nơi mà đọc và hiển thị ra những dòng code trên các trình duyệt cho người dùng
+- tên đầy đủ Hyper text tranfor protocal là một giao thức truyền tải siêu văn bản, nó là nơi mà đọc và hiển thị ra những dòng code trên các trình duyệt cho người dùng
 
 # SSR (server side render) & CSR (client side rendering)
 
@@ -17,12 +17,13 @@ install về: npm i nodemon --save-dev
 ```
 
 - muốn chạy server bằng nodemon thì trước tiên phải tinh chỉnh 1 xíu trong file package.json
-  ````
-  "script":{
+
+````
+"script":{
   "start": "nodemon tenFileMacDinhChayDuAn"
   }
   --> npm start```
-  ````
+````
 
 # git
 
@@ -36,10 +37,10 @@ node_modules/
 - Các bước để connect và push code lên git
 
 ```
-    git clone SSH_của dự án // clone dự án từ trên github về, lưu ý là đuôi link của github phải trùng với folder nơi bạn chứa code clone về
-    git add . // đẩy tất cả những thay đổi lên local, nơi chuẩn bị code để đẩy lên git
-    git commit -m "nội dung" // tạo ghi chú cho phần code mình đẩy lên
-    git push origin master // đẩy code thì local lên git
+git clone SSH_của dự án // clone dự án từ trên github về, lưu ý là đuôi link của github phải trùng với folder nơi bạn chứa code clone về
+git add . // đẩy tất cả những thay đổi lên local, nơi chuẩn bị code để đẩy lên git
+git commit -m "nội dung" // tạo ghi chú cho phần code mình đẩy lên
+git push origin master // đẩy code thì local lên git
 ```
 
 # morgan
@@ -109,4 +110,48 @@ src
         └── footer.hbs
       └── home.handlebars
 └── index.js
+```
+
+# Static files & SCSS
+
+## Static files
+
+- là các tệp tin như HTML, CSS, JavaScript, hình ảnh và các tài nguyên khác không thay đổi trong quá trình thực thi của ứng dụng web. Khi một trình duyệt web yêu cầu một trang web, các tệp tin static này được gửi từ máy chủ đến trình duyệt mà không có bất kỳ xử lý động nào. Chúng được dùng để hiển thị nội dung cho người dùng cuối mà không cần phải tạo ra nội dung động từ máy chủ.
+
+```
+  path.join(\_\_dirname,"")
+```
+
+- Đoạn mã path.join(**dirname, "resources/views") sử dụng path.join() để kết hợp đường dẫn của thư mục hiện tại (**dirname) với một đường dẫn tương đối (resources/views). Điều này thường được sử dụng trong Node.js để tạo ra một đường dẫn tuyệt đối đến một thư mục cụ thể trong ứng dụng.
+
+- Ví dụ, nếu ứng dụng của bạn được triển khai trong thư mục /home/user/myapp, và bạn muốn có đường dẫn đến thư mục resources/views, thì path.join(\_\_dirname, "resources/views") sẽ tạo ra đường dẫn /home/user/myapp/resources/views.
+
+```
+  app.use(express.static(path.join(\_\_dirname, "public")));
+```
+
+- Đoạn mã trên được sử dụng trong một ứng dụng Express để cung cấp các tệp tin static cho trình duyệt web từ thư mục public. Điều này có nghĩa là khi một yêu cầu được gửi đến máy chủ Express, nếu trình duyệt yêu cầu một tệp tin từ máy chủ (ví dụ: CSS, JavaScript, hình ảnh), Express sẽ kiểm tra xem nó có tồn tại trong thư mục public không. Nếu có, nó sẽ gửi tệp tin đó về cho trình duyệt.
+
+## SCSS
+
+[Source document](https://topdev.vn/blog/markdown-la-gi-cach-su-dung-markdown/#dung-cho-chen-link)
+
+```
+// command line
+npm i node-sass --save-dev
+
+// usage
+node-sass [options] <input> [output]
+
+//package.json
+
+ "scripts": {
+    ...
+    "watch": "node-sass --watch src/resources/scss/app.scss src/public/css/app.css"
+    ...
+  }
+
+// run at command line
+
+npm run watch
 ```
