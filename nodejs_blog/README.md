@@ -134,7 +134,7 @@ src
 
 ## SCSS
 
-[Source document](https://topdev.vn/blog/markdown-la-gi-cach-su-dung-markdown/#dung-cho-chen-link)
+[Source document](https://www.npmjs.com/package/node-sass)
 
 ```
 // command line
@@ -155,3 +155,5 @@ node-sass [options] <input> [output]
 
 npm run watch
 ```
+
+- Khi đã cài scss rồi thì chỉ nên viết code css bên file app.scss thôi, bởi khi đã cấu hình rồi thì có cập nhật thay đổi gì bên file app.scss thì bên file app.css cũng sẽ được cập nhật theo
